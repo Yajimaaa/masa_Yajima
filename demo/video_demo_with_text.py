@@ -5,7 +5,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
 import gc
-import resource
+#import resource
 import argparse
 import cv2
 import tqdm
@@ -34,12 +34,12 @@ try:
 except RuntimeError:
     pass
 
-def set_file_descriptor_limit(limit):
+""" def set_file_descriptor_limit(limit):
     soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
     resource.setrlimit(resource.RLIMIT_NOFILE, (limit, hard))
 
 # Set the file descriptor limit to 65536
-set_file_descriptor_limit(65536)
+set_file_descriptor_limit(65536) """
 
 def visualize_frame(args, visualizer, frame, track_result, frame_idx, fps=None):
     visualizer.add_datasample(
